@@ -15,6 +15,7 @@
   "dependencies": {
     "react": "19.3.0",
     "react-native": "0.88.1",
+    "react-native-blob-util": "^0.25.1",
     "react-native-nitro-modules": "^0.37.2",
     "react-native-nitro-quicklook": "workspace:*"
   },
