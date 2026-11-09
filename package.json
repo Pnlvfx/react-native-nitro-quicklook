@@ -1,0 +1,149 @@
+{
+  "name": "react-native-nitro-quicklook",
+  "version": "0.1.0",
+  "description": "Quick Look file thumbnails (PDF, Office, text, images) via Nitro Modules",
+  "keywords": [
+    "react-native",
+    "ios",
+    "android",
+    "quicklook",
+    "thumbnail"
+  ],
+  "homepage": "https://github.com/Pnlvfx/react-native-nitro-quicklook#readme",
+  "bugs": {
+    "url": "https://github.com/Pnlvfx/react-native-nitro-quicklook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pnlvfx/react-native-nitro-quicklook.git"
+  },
+  "license": "MIT",
+  "author": "Simone Gauli <simone@gauli.it> (https://github.com/Pnlvfx)",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "types": "./lib/typescript/src/index.d.ts",
+      "default": "./lib/module/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./lib/module/index.js",
+  "types": "./lib/typescript/src/index.d.ts",
+  "files": [
+    "src",
+    "lib",
+    "android",
+    "ios",
+    "cpp",
+    "nitrogen",
+    "nitro.json",
+    "*.podspec",
+    "react-native.config.js",
+    "!ios/build",
+    "!android/build",
+    "!android/gradle",
+    "!android/gradlew",
+    "!android/gradlew.bat",
+    "!android/local.properties",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
+    "!**/.*"
+  ],
+  "workspaces": [
+    "example"
+  ],
+  "scripts": {
+    "build": "bob build",
+    "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build lib",
+    "clear": "node tools/clear.ts",
+    "example": "pnpm --filter react-native-nitro-quicklook-example",
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "ncu": "pnpm update --interactive --latest --recursive",
+    "nitrogen": "nitrogen",
+    "prepare": "lefthook install",
+    "test": "jest",
+    "tsc": "tsc --noEmit"
+  },
+  "jest": {
+    "preset": "@react-native/jest-preset",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules",
+      "<rootDir>/lib/"
+    ]
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.29.13",
+    "@commitlint/cli": "^21.2.3",
+    "@commitlint/config-conventional": "^21.2.3",
+    "@eslint/config-helpers": "^0.7.0",
+    "@goatjs/react-native-eslint": "^3.53.0",
+    "@goatjs/rimraf": "^2.15.0",
+    "@goatjs/typescript-config": "^2.3.0",
+    "@jest/globals": "^30.4.1",
+    "@react-native/babel-preset": "0.88.1",
+    "@react-native/jest-preset": "0.88.1",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "babel-plugin-react-compiler": "1.0.0",
+    "del-cli": "^7.0.0",
+    "eslint": "^10.14.0",
+    "execa": "^10.0.1",
+    "jest": "^30.4.2",
+    "lefthook": "^2.1.16",
+    "nitrogen": "^0.37.2",
+    "prettier": "3.9.10",
+    "react": "19.3.0",
+    "react-native": "0.88.1",
+    "react-native-builder-bob": "^0.44.1",
+    "react-native-nitro-modules": "^0.37.2",
+    "turbo": "^2.11.7",
+    "typescript": "^6.0.3"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "react-native-nitro-modules": "*"
+  },
+  "packageManager": "pnpm@12.18.0",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "create-react-native-library": {
+    "type": "nitro-module",
+    "languages": "kotlin-swift",
+    "tools": [
+      "eslint",
+      "jest"
+    ],
+    "version": "0.57.2"
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      [
+        "custom",
+        {
+          "script": "nitrogen",
+          "clean": "nitrogen/"
+        }
+      ],
+      [
+        "module",
+        {
+          "esm": true,
+          "configFile": true
+        }
+      ],
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  }
+}

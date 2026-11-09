@@ -1,0 +1,30 @@
+nodeLinker: hoisted
+
+hoistingLimits: workspaces
+
+verifyDepsBeforeRun: false
+
+registries:
+  https://europe-west8-npm.pkg.dev/open-gto-2/goat/:
+    scopes:
+      - '@goatjs'
+
+fetchRetries: 0
+
+fetchTimeout: 900000
+
+packages:
+  - .
+  - example
+
+minimumReleaseAge: 1440
+
+minimumReleaseAgeExclude:
+  - '@goatjs/*'
+  - '@react-native/*'
+  - 'eslint-plugin-react-hooks'
+
+allowBuilds:
+  '@parcel/watcher': true
+  lefthook: true
+  unrs-resolver: true

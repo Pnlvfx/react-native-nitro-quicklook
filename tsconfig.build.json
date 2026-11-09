@@ -1,0 +1,4 @@
+{
+  "extends": "./tsconfig",
+  "exclude": ["example", "lib", "babel.config.js", "eslint.config.js", "tools", "commitlint.config.ts"]
+}
