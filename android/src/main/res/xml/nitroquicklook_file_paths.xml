@@ -4,5 +4,4 @@
   <cache-path name="nitroquicklook_cache" path="." />
   <external-files-path name="nitroquicklook_external_files" path="." />
   <external-cache-path name="nitroquicklook_external_cache" path="." />
-  <external-path name="nitroquicklook_external" path="." />
 </paths>
