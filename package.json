@@ -1,6 +1,6 @@
 {
   "name": "react-native-nitro-quicklook",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Quick Look file thumbnails (PDF, Office, text, images) via Nitro Modules",
   "keywords": [
     "react-native",
